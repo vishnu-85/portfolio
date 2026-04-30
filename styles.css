@@ -55,24 +55,40 @@ nav a {
 nav a:hover {
   color: var(--secondary);
 }
-
+.logo{
+  white-space: nowrap;
+}
 /* HERO */
 .hero {
+  position: relative;
   height: 100vh;
-  background: var(--bg);
+  background: url('./img/bg.jpg') center/cover no-repeat;
   display: flex;
   align-items: center;
 }
-
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+}
 .hero-grid {
+  width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
   align-items: center;
+  position: relative;
 }
 
 .hero h1 {
   font-size: 3rem;
+  z-index: 1;
+  position: relative;
+}
+.hero h2 , .hero p{
+  z-index: 1;
+  position: relative;
 }
 
 .highlight {
@@ -85,7 +101,7 @@ nav a:hover {
   display: inline-block;
   padding: 12px 25px;
   text-decoration: none;
-  border-radius: 12px;
+  border-radius: 8px;
   position: relative;
   color: transparent;
   background: linear-gradient(135deg,var(--primary), var(--secondary));
@@ -123,7 +139,7 @@ nav a:hover {
 .btn {
   display: inline-block;
   padding: 10px 20px;
-  border-radius: 6px;
+  border-radius: 8px;
   background: linear-gradient(135deg, var(--primary), var(--secondary));
   color: var(--text);
   text-decoration: none;
@@ -226,7 +242,7 @@ p {
   align-items: center;
   gap: 15px;
   background: rgba(255,255,255,0.05);
-  padding: 20px;
+  padding: 20px 20px;
   border-radius: 12px;
   transition: 0.3s ease;
   position: relative;
@@ -238,7 +254,7 @@ p {
   height: 50px;
   background: var(--text);
   padding: 8px;
-  border-radius: 10px;
+  border-radius: 12px;
 }
 
 /* Text */
@@ -277,18 +293,18 @@ p {
 }
 .about img{
   width: 100%;
-  border-radius: 10px;
+  border-radius: 12px;
 }
 /* PORTFOLIO */
 .portfolio img {
   width: 100%;
-  border-radius: 10px;
+  border-radius: 12px;
 }
 /* CONTACT */
 .contact {
     padding: 3.5rem;
-    background: linear-gradient(135deg,var(--primary), var(--secondary));
-    border-radius: 14px;
+    background: linear-gradient(22deg,var(--primary), var(--secondary));
+    border-radius: 12px;
 }
 .contact-body{
   display: grid;
@@ -331,10 +347,44 @@ footer {
   nav {
     padding: 15px;
   }
+   .profile-img{
+    position: absolute;
+    right: 20px;
+    top: 40px;
+  }
+  .profile-img img{
+    width: 270px;
+  } 
+  .skills-grid{
+    grid-template-columns: repeat(3, minmax(120px, 1fr));
+  }
+
 } 
 @media(max-width:768px){
+  .profile-img{
+    position: absolute;
+    right: 20px;
+    top: 40px;
+  }
+  .profile-img img{
+    width: 180px;
+  }
   .skill-card {
     flex-direction: column;
     text-align: center;
+    gap: 10px;
+    padding: 20px 5px;
+  }
+  .skills-grid{
+    grid-template-columns: repeat(2, minmax(120px, 1fr));
+  }
+  .grid{
+    grid-template-columns: repeat(1, minmax(150px, 1fr));
+  }
+  .contact {
+    padding: 1rem;
+  }
+  ._contact-img{
+    display: none;
   }
 }
