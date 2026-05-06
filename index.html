@@ -11,21 +11,21 @@
 <body>
 
   <nav>
-    <h2 class="logo highlight">Vishnu Kant</h2>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+      <h2 class="logo"><span class="highlight">Vishnu</span> Kant</h2>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
   </nav>
 
   <!-- HERO -->
   <section id="home" class="hero">
     <div class="overlay"></div>
     <div class="container hero-grid">
-      <div>
+      <div class="scroll-reveal top">
 
         <h1>Vishnu Kant</h1>
         <h2>Senior <span class="highlight">Software</span> Developer </h2>
@@ -33,7 +33,7 @@
         <a href="#contact" class="btn">Get in Touch</a>
         <a href="#portfolio" class="btn-default">View Work</a>
       </div>
-      <div class="profile-img">
+      <div class="profile-img scroll-reveal top">
         <img src="./img/vishnukant.jpg" width="100%">
       </div>
     </div>
@@ -42,8 +42,8 @@
   <!-- ABOUT -->
   <section id="about">
     <div class="container about">
-      <img src="./img/about.jpg">
-      <div>
+      <img class="scroll-reveal left" src="./img/about.jpg">
+      <div class="scroll-reveal right">
         <h2>About Me</h2>
         <p>Senior Angular Developer with 8+ years of experience building scalable, high-performance web applications
           using Angular, TypeScript, and RxJS. Skilled in micro-frontend architecture, performance optimization, and
@@ -58,7 +58,7 @@
   <section id="skills" class="skills-section">
     <div class="container">
       <h2 class="section-title">My Skills</h2>
-      <p class="section-subtitle">
+      <p class="section-subtitle scroll-reveal top">
         I specialize in modern frontend technologies with strong experience in Angular,
         TypeScript, javascript and scalable architecture.
       </p>
@@ -84,7 +84,7 @@
           </div>
         </div>
 
-         <div class="skill-card">
+        <div class="skill-card">
           <img src="./img/icon/typescript.png" alt="MySQL">
           <div>
             <h3>Typescript</h3>
@@ -156,7 +156,7 @@
           </div>
         </div>
 
-         <div class="skill-card">
+        <div class="skill-card">
           <img src="./img/icon/html.png" alt="MySQL">
           <div>
             <h3>HTML</h3>
@@ -174,7 +174,7 @@
           </div>
         </div>
 
-          <div class="skill-card">
+        <div class="skill-card">
           <img src="./img/icon/git.png" alt="MySQL">
           <div>
             <h3>GIT</h3>
@@ -211,41 +211,41 @@
     <div class="container">
       <h2>My Portfolio</h2>
       <div class="grid portfolio">
-        <div class="card">
+        <div class="card scroll-reveal left">
           <img src="./img/projects.jpg">
           <h3 class="gradient-text">Estater Markets</h3>
           <p>Analytics platform with dashboards & Power BI integration.</p>
         </div>
 
-        <div class="card">
+        <div class="card scroll-reveal left">
           <img src="./img/projects.jpg">
           <h3 class="gradient-text">Estater Meter</h3>
           <p>High-performance property valuation system.</p>
         </div>
 
-        <div class="card">
+        <div class="card scroll-reveal left">
           <img src="./img/projects.jpg">
           <h3 class="gradient-text">Admin Dashboard</h3>
           <p>Configurable panel for reports & user roles.</p>
         </div>
 
-        <div class="card">
+        <div class="card scroll-reveal right">
           <img src="./img/projects.jpg">
           <h3 class="gradient-text">IRCTC Ticket Booking System (CRIS)</h3>
           <p>Worked on high-traffic government platform for railway ticket booking and passenger services.</p>
         </div>
 
-        <div class="card">
+        <div class="card scroll-reveal right">
           <img src="./img/projects.jpg">
           <h3 class="gradient-text">Government Digital Services </h3>
           <p>Developed government digital services platform for citizen-facing applications.</p>
         </div>
 
-         <div class="card">
+        <!-- <div class="card scroll-reveal right">
           <img src="./img/projects.jpg">
           <h3 class="gradient-text">Government Digital Services </h3>
           <p>Developed government digital services platform for citizen-facing applications.</p>
-        </div>
+        </div> -->
 
       </div>
     </div>
@@ -258,7 +258,7 @@
       <div class="contact">
         <h2>Let's get in Touch</h2>
         <div class="contact-body">
-          <div class="contact-list">
+          <div class="contact-list scroll-reveal left">
             <div class="item">
               <label>Email</label>
               <p>vishnukantlav291@gmail.com</p>
@@ -272,7 +272,7 @@
               <p>Jaipur, Rajasthan</p>
             </div>
           </div>
-          <div class="_contact-img">
+          <div class="_contact-img scroll-reveal right">
             <img src="./img/contactus.png" alt="">
           </div>
 
@@ -285,6 +285,31 @@
     <p>© <span id="_year"></span> Vishnu Kant</p>
   </footer>
   <script>
+    // Intersection Observer for scroll reveals (elements with .scroll-reveal and .skill-card)
+    const revealElements = document.querySelectorAll('.scroll-reveal, .skill-card');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          // If it's a stagger parent, we also want each child revealed implicitly via CSS
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: "0px 0px -20px 0px" });
+
+    revealElements.forEach(el => observer.observe(el));
+
+    // Also trigger for already visible items on load
+    setTimeout(() => {
+      revealElements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 80) {
+          el.classList.add('revealed');
+          observer.unobserve(el);
+        }
+      });
+    }, 200);
+
     let _year = document.getElementById('_year');
     _year.innerText = new Date().getFullYear();
   </script>
