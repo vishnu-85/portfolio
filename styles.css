@@ -157,7 +157,7 @@ nav a:hover {
 /* CARDS */
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(200px, 1fr));
+  grid-template-columns: repeat(1, minmax(100%, 1fr));
   gap: 20px;
 }
 
@@ -378,7 +378,7 @@ footer {
     grid-template-columns: repeat(2, minmax(120px, 1fr));
   }
   .grid{
-    grid-template-columns: repeat(1, minmax(150px, 1fr));
+    grid-template-columns: repeat(1, minmax(100%, 1fr));
   }
   .contact {
     padding: 1rem;
