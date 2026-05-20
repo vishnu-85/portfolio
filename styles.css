@@ -157,10 +157,9 @@ nav a:hover {
 /* CARDS */
 .grid {
   display: grid;
-  grid-template-columns: repeat(1, minmax(100%, 1fr));
+  grid-template-columns: repeat(2, minmax(50%, 1fr));
   gap: 20px;
 }
-
 .card {
   background: var(--card);
   padding: 20px;
@@ -219,7 +218,83 @@ p {
 #portfolio{
   background-color: var(--black);
 }
+.tabset {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
 
+.tabset ul {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+  padding: 4px 6px;
+  margin: 0;
+  background: #f3f4f6;
+  border-radius: 50px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.tabset ul li {
+  padding: 10px 25px;
+  border-radius: 40px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #555;
+  user-select: none;
+}
+
+/* Active Tab */
+.tabset ul li.active {
+  background: #2563eb;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.35);
+}
+
+/* Hover Effect */
+.tabset ul li:hover {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.tab-content {
+  /* display: none; */
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.tab-content.active {
+  display: block;
+}
+/* ///////////////// */
+
+/* Video  */
+
+.ai-grid{
+      display: flex;
+    gap: 20px;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.video-box {
+     max-width: 445px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.video-box video {
+    width: 100%;
+    border-radius: 10px;
+    height: 250px;
+    display: block;
+    border: 1px solid #353535;
+}
+/* //////////////////// */
 /* SKILL */
 .section-title {
   font-size: 2rem;

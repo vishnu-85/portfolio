@@ -11,14 +11,15 @@
 <body>
 
   <nav>
-      <h2 class="logo"><span class="highlight">Vishnu</span> Kant</h2>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+    <h2 class="logo"><span class="highlight">Vishnu</span> Kant</h2>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#aiportfolio">AI Video</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
   </nav>
 
   <!-- HERO -->
@@ -205,43 +206,84 @@
     </div>
   </section>
 
+  
+  <!-- AI PORTFOLIO -->
+  <section id="aiportfolio">
+    <div class="container">
+      <h2>My AI Portfolio</h2> 
+
+      <div class="tab-content" id="aivideo">
+        <div class="ai-grid portfolio">
+          
+           <div class="scroll-reveal left video-box">
+            <video width="100%" muted controls>
+              <source src="./ai_video/v2.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="scroll-reveal right video-box">
+            <video width="100%" muted controls>
+              <source src="./ai_video/v1.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="scroll-reveal right video-box">
+            <video width="100%" muted controls>
+              <source src="./ai_video/v3.mp4" type="video/mp4">
+            </video>
+          </div>         
+         
+        </div>
+      </div>
+
+
+    </div>
+  </section>
 
   <!-- PORTFOLIO -->
   <section id="portfolio">
     <div class="container">
-      <h2>My Portfolio</h2>
-      <div class="grid portfolio">
-        <div class="card scroll-reveal left">
-          <h3 class="gradient-text">Estater Markets</h3>
-          <p>Analytics platform with dashboards & Power BI integration.</p>
-        </div>
+      <h2>My Portfolio</h2> 
+      <div class="tab-content active" id="development">
+        <div class="grid portfolio">
+          <div class="scroll-reveal left">
+            <img src="./img/project/markets.png" alt="">
+            <h3 class="gradient-text">Estater Markets</h3>
+            <p>Analytics platform with dashboards & Power BI integration.</p>
+          </div>
 
-        <div class="card scroll-reveal left">
-          <h3 class="gradient-text">Estater Meter</h3>
-          <p>High-performance property valuation system.</p>
-        </div>
+          <div class="scroll-reveal right">
+            <img src="./img/project/estater.png" alt="">
+            <h3 class="gradient-text">Estater Meter</h3>
+            <p>High-performance property valuation system.</p>
+          </div>
 
-        <div class="card scroll-reveal left">
-          <h3 class="gradient-text">Admin Dashboard</h3>
-          <p>Configurable panel for reports & user roles.</p>
-        </div>
+          <div class="scroll-reveal left">
+            <img src="./img/project/mi-admin.png" alt="">
+            <h3 class="gradient-text">Admin Dashboard</h3>
+            <p>Configurable panel for reports & user roles.</p>
+          </div>
 
-        <div class="card scroll-reveal right">
-          <h3 class="gradient-text">IRCTC Ticket Booking System (CRIS)</h3>
-          <p>Worked on high-traffic government platform for railway ticket booking and passenger services.</p>
-        </div>
+          <div class="scroll-reveal right">
+            <img src="./img/project/irctc.png" alt="">
+            <h3 class="gradient-text">IRCTC Ticket Booking System (CRIS)</h3>
+            <p>Worked on high-traffic government platform for railway ticket booking and passenger services.</p>
+          </div>
 
-        <div class="card scroll-reveal right">
-          <h3 class="gradient-text">Government Digital Services </h3>
-          <p>Developed government digital services platform for citizen-facing applications.</p>
-        </div>
+          <div class="scroll-reveal left">
+            <img src="./img/project/nathap.png" alt="">
+            <h3 class="gradient-text">Government Digital Services </h3>
+            <p>Developed government digital services platform for citizen-facing applications.</p>
+          </div>
 
-        <!-- <div class="card scroll-reveal right">
+          <!-- <div class="card scroll-reveal right">
           <h3 class="gradient-text">Government Digital Services </h3>
           <p>Developed government digital services platform for citizen-facing applications.</p>
         </div> -->
 
+        </div>
       </div>
+
+
     </div>
   </section>
 
@@ -303,6 +345,31 @@
         }
       });
     }, 200);
+
+    const tabs = document.querySelectorAll('.tabset li');
+    const contents = document.querySelectorAll('.tab-content');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+
+        // Remove active class from all tabs
+        tabs.forEach(item => item.classList.remove('active'));
+
+        // Hide all sections
+        contents.forEach(content => {
+          content.classList.remove('active');
+        });
+
+        // Add active class to clicked tab
+        tab.classList.add('active');
+
+        // Show matching section
+        const target = tab.getAttribute('data-tab');
+        document.getElementById(target).classList.add('active');
+
+      });
+    });
+
 
     let _year = document.getElementById('_year');
     _year.innerText = new Date().getFullYear();
