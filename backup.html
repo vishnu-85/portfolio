@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vishnu Kant | Software Developer & AI Video Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- RESET & VARIABLES --- */
+        :root {
+            --primary: #529CFF;
+            --primary-dark: #3a85e8;
+            --primary-light: rgba(82, 156, 255, 0.1);
+            --text: #121212;
+            --text-muted: #555555;
+            --bg-pure: #ffffff;
+            --bg-subtle: #f8fafc;
+            --white: #ffffff;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+            --shadow-md: 0 10px 30px rgba(82, 156, 255, 0.08);
+            --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.06);
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            --font: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-family: var(--font);
+            background-color: var(--bg-pure);
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        li {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* --- GLOBAL BUTTONS --- */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 28px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border-radius: var(--radius-sm);
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--white);
+            box-shadow: 0 4px 14px rgba(82, 156, 255, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(82, 156, 255, 0.4);
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: var(--white);
+            box-shadow: 0 4px 14px rgba(37, 211, 102, 0.2);
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #20ba5a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+        }
+
+        /* --- NAVBAR --- */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: var(--transition);
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+        }
+
+        .header.scrolled {
+            padding: 12px 0;
+            box-shadow: var(--shadow-sm);
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 20px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: var(--transition);
+        }
+
+        .header.scrolled .nav-container {
+            padding: 10px 24px;
+        }
+
+        .logo a {
+            display: flex;
+            align-items: center;
+            font-weight: 800;
+            font-size: 1.3rem;
+            color: var(--text);
+            gap: 10px;
+        }
+
+        .logo img {
+            height: 36px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 36px;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            position: relative;
+            padding: 4px 0;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary);
+        }
+
+        /* Underline Hover Animation */
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+            z-index: 1001;
+            padding: 8px;
+        }
+
+        .bar {
+            display: block;
+            width: 24px;
+            height: 2px;
+            margin: 5px auto;
+            transition: var(--transition);
+            background-color: var(--text);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            position: relative;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            padding: 140px 24px 80px 24px;
+            background: radial-gradient(circle at 90% 10%, rgba(82, 156, 255, 0.04) 0%, transparent 40%),
+                        radial-gradient(circle at 10% 90%, rgba(82, 156, 255, 0.03) 0%, transparent 50%);
+            overflow: hidden;
+        }
+
+        .hero-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 48px;
+            align-items: center;
+            width: 100%;
+        }
+
+        .hero-content {
+            z-index: 2;
+            animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 14px;
+            background-color: var(--primary-light);
+            color: var(--primary);
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 4.5vw, 4rem);
+            font-weight: 800;
+            line-height: 1.15;
+            letter-spacing: -1px;
+            margin-bottom: 16px;
+            color: var(--text);
+        }
+
+        .hero-title span {
+            color: var(--primary);
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 2vw, 1.6rem);
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .hero-description {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 36px;
+            max-width: 540px;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        /* Hero Right Side Graphics */
+        .hero-graphics {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+            animation: fadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .illustration-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            aspect-ratio: 1;
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        /* Glassmorphism floating components simulating a premium development UI */
+        .floating-bg {
+            position: absolute;
+            width: 120%;
+            height: 120%;
+            background: linear-gradient(135deg, rgba(82, 156, 255, 0.05) 0%, rgba(255,255,255,0) 60%);
+            z-index: 1;
+        }
+
+        .code-window {
+            width: 85%;
+            height: 70%;
+            background: #1e1e24;
+            border-radius: var(--radius-md);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+            overflow: hidden;
+            position: relative;
+            z-index: 2;
+            transform: perspective(1000px) rotateY(-10deg) rotateX(5deg);
+            transition: var(--transition);
+        }
+
+        .code-window:hover {
+            transform: perspective(1000px) rotateY(-4deg) rotateX(2deg) translateY(-5px);
+        }
+
+        .window-header {
+            height: 32px;
+            background: #151519;
+            display: flex;
+            align-items: center;
+            padding: 0 16px;
+            gap: 6px;
+        }
+
+        .dot {
+            width: 100%;
+            max-width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+        .dot-r { background: #ff5f56; }
+        .dot-y { background: #ffbd2e; }
+        .dot-g { background: #27c93f; }
+
+        .window-body {
+            padding: 20px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.85rem;
+            color: #a9b2c3;
+            line-height: 1.5;
+        }
+
+        .code-keyword { color: #f92672; }
+        .code-class { color: #66d9ef; }
+        .code-string { color: #e6db74; }
+        .code-comment { color: #75715e; }
+
+        /* Floating UI Widget */
+        .ui-widget {
+            position: absolute;
+            bottom: 40px;
+            left: -20px;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            padding: 16px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-md);
+            z-index: 3;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .ui-widget-right {
+            position: absolute;
+            top: 40px;
+            right: -20px;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            padding: 12px 20px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-md);
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            animation: float 6s ease-in-out infinite;
+            animation-delay: 3s;
+        }
+
+        .widget-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-light);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .widget-text h4 {
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+        .widget-text p {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+        /* --- SECTION STRUCTURES --- */
+        .section {
+            padding: 100px 24px;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto 60px auto;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 3.5vw, 2.6rem);
+            font-weight: 800;
+            color: var(--text);
+            margin-bottom: 16px;
+            position: relative;
+        }
+
+        .section-title span {
+            color: var(--primary);
+        }
+
+        .section-subtitle {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* --- ABOUT SECTION --- */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-left h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .about-left p {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .about-highlights {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 32px;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .highlight-item i {
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-top: 3px;
+        }
+
+        .highlight-item p {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text);
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        /* Stats Cards Configuration */
+        .about-right-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .stat-card {
+            background: var(--white);
+            padding: 30px 24px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--primary);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
+            border-color: rgba(82, 156, 255, 0.2);
+        }
+
+        .stat-card:hover::before {
+            opacity: 1;
+        }
+
+        .stat-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 16px;
+            display: inline-block;
+        }
+
+        .stat-number {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--text);
+            margin-bottom: 4px;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        /* --- SERVICES SECTION --- */
+        .services-bg {
+            background-color: var(--bg-subtle);
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+        }
+
+        .services-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 100px 24px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Gradient Glow Border Hack using CSS positioning */
+        .service-card::after {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            border-radius: var(--radius-md);
+            background: linear-gradient(135deg, var(--primary), transparent 60%);
+            z-index: -1;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-card:hover::after {
+            opacity: 1;
+        }
+
+        .service-icon-wrapper {
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary-light);
+            color: var(--primary);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 24px;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-icon-wrapper {
+            background-color: var(--primary);
+            color: var(--white);
+            transform: scale(1.05);
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 14px;
+            color: var(--text);
+        }
+
+        .service-card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 24px;
+            flex-grow: 1;
+        }
+
+        .service-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--primary);
+            border: none;
+            background: none;
+            cursor: pointer;
+            width: fit-content;
+            padding: 0;
+            transition: var(--transition);
+        }
+
+        .service-btn i {
+            font-size: 0.8rem;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-btn i {
+            transform: translateX(4px);
+        }
+
+        /* --- RESPONSIVE ADJUSTMENTS --- */
+        @media (max-width: 1024px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            .about-highlights {
+                grid-template-columns: 1fr;
+            }
+            .about-right-stats {
+                gap: 16px;
+            }
+            .stat-card {
+                padding: 24px 16px;
+            }
+        }
+
+        /* --- ANIMATIONS --- */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* --- RESPONSIVE MEDIA QUERIES --- */
+        @media (max-width: 1024px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 60px;
+                text-align: center;
+            }
+
+            .hero-description {
+                margin: 0 auto 36px auto;
+            }
+
+            .hero-actions {
+                justify-content: center;
+            }
+
+            .hero-graphics {
+                order: -1; /* Graphic displays above text on mobile/tablets */
+            }
+            
+            .ui-widget { left: 20px; }
+            .ui-widget-right { right: 20px; }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            .hamburger.active .bar:nth-child(2) { opacity: 0; }
+            .hamburger.active .bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+            .hamburger.active .bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 77px;
+                flex-direction: column;
+                background-color: var(--bg-pure);
+                width: 100%;
+                height: calc(100vh - 77px);
+                gap: 30px;
+                padding-top: 40px;
+                transition: 0.4s ease;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+                border-top: 1px solid rgba(0,0,0,0.05);
+                z-index: 999;
+                align-items: flex-start;
+                padding-left: 40px;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .hero {
+                padding-top: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header" id="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="#home">
+                    <img src="https://gemini.google.com/share/279f8ff4a31d" alt="VK" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\' fill=\'%23529CFF\'><circle cx=\'50\' cy=\'50\' r=\'40\'/><text x=\'50%\' y=\'55%\' font-size=\'32\' font-weight=\'bold\' fill=\'white\' dominant-baseline=\'middle\' text-anchor=\'middle\'>VK</text></svg>';">
+                    <span>Vishnu Kant</span>
+                </a>
+            </div>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-tag">
+                    <i class="fa-solid fa-bolt" style="margin-right: 6px;"></i> Available for Projects
+                </div>
+                <h1 class="hero-title">Hi, I’m <span>Vishnu Kant</span></h1>
+                <h2 class="hero-subtitle">I Create Websites & Applications That Impress</h2>
+                <p class="hero-description">
+                    Expert Web Design, Web Development, and AI Video Creation Solutions for Modern Businesses. Building scalable architecture with stunning aesthetics.
+                </p>
+                <div class="hero-actions">
+                    <a href="#contact" class="btn btn-primary">
+                        Get in Touch <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="https://wa.me/918090192900" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+                        <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-graphics">
+                <div class="illustration-wrapper">
+                    <div class="floating-bg"></div>
+                    
+                    <div class="code-window">
+                        <div class="window-header">
+                            <span class="dot dot-r"></span>
+                            <span class="dot dot-y"></span>
+                            <span class="dot dot-g"></span>
+                        </div>
+                        <div class="window-body">
+                            <p><span class="code-keyword">const</span> developer = {</p>
+                            <p>&nbsp;&nbsp;name: <span class="code-string">"Vishnu Kant"</span>,</p>
+                            <p>&nbsp;&nbsp;role: <span class="code-string">"Full Stack Engineer"</span>,</p>
+                            <p>&nbsp;&nbsp;skills: [<span class="code-class">"Angular"</span>, <span class="code-class">"Node.js"</span>],</p>
+                            <p>&nbsp;&nbsp;aiVideo: <span class="code-keyword">true</span></p>
+                            <p>};</p>
+                            <p><span class="code-comment">// Building clean modern solutions</span></p>
+                            <p><span class="code-class">developer</span>.createApp();</p>
+                        </div>
+                    </div>
+
+                    <div class="ui-widget">
+                        <div class="widget-icon">
+                            <i class="fa-solid fa-chart-pie"></i>
+                        </div>
+                        <div class="widget-text">
+                            <h4>Dashboards</h4>
+                            <p>Analytics & Power BI</p>
+                        </div>
+                    </div>
+
+                    <div class="ui-widget-right">
+                        <span style="color: var(--primary); font-weight:700; font-size:1.1rem; display:flex; align-items:center; gap:5px;">
+                            <i class="fa-solid fa-video"></i> AI Video
+                        </span>
+                        <span style="font-size:0.7rem; color: var(--text-muted);">Solutions Layer Enabled</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="section" id="about">
+        <div class="about-grid">
+            <!-- Left Side Descriptive Text -->
+            <div class="about-left">
+                <div class="hero-tag" style="margin-bottom: 16px;">About Me</div>
+                <h3>Building Innovative, High-Performance Systems with Elegant Architectural Integrity</h3>
+                <p>
+                    Vishnu Kant is a professional Software Developer specializing in modern website development, web applications, enterprise dashboards, and AI-powered digital solutions. He builds scalable, responsive, and user-friendly platforms using modern frontend and backend technologies.
+                </p>
+                <p>
+                    With targeted experience in delivering mission-critical government and enterprise-level production pipelines, he places key design emphasis on speed optimizations, security standards, and business-focused outcomes.
+                </p>
+                
+                <div class="about-highlights">
+                    <div class="highlight-item">
+                        <i class="fa-solid fa-layer-group"></i>
+                        <p>Enterprise Application Systems Development</p>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fa-solid fa-building-shield"></i>
+                        <p>High-Traffic Government Scale Deployments</p>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        <p>Modern Premium UI/UX Implementation Focus</p>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fa-solid fa-cubes"></i>
+                        <p>Responsive, Modular & Scalable Codebases</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side Animated Analytics Cards -->
+            <div class="about-right-stats">
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fa-solid fa-circle-check"></i></div>
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fa-solid fa-code"></i></div>
+                    <div class="stat-number">6+</div>
+                    <div class="stat-label">Technologies Mastered</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fa-solid fa-briefcase"></i></div>
+                    <div class="stat-number">3+</div>
+                    <div class="stat-label">Years of Experience</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fa-solid fa-face-smile"></i></div>
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Client Satisfaction</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <div class="services-bg">
+        <section class="section services-container" id="services">
+            <div class="section-header">
+                <h2 class="section-title">What I <span>Provide</span></h2>
+                <p class="section-subtitle">Premium end-to-end web engineering and artificial intelligence video solutions built precisely for high-impact commercial scaling.</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Service 1: Website Creation -->
+                <div class="service-card">
+                    <div class="service-icon-wrapper">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <h3>Website Creation</h3>
+                    <p>Modern responsive business websites with ultra-clean aesthetic structures. Structured strictly around custom design specs, fast execution layers, and fully SEO-optimized layouts.</p>
+                    <button class="service-btn">Read More <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+
+                <!-- Service 2: Web Development -->
+                <div class="service-card">
+                    <div class="service-icon-wrapper">
+                        <i class="fa-solid fa-server"></i>
+                    </div>
+                    <h3>Web Development</h3>
+                    <p>Full-stack architectural web systems engineered using secure tech structures. Custom-fit admin panels, analytics dashboards, structural API data binding, and enterprise web layers.</p>
+                    <button class="service-btn">Read More <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+
+                <!-- Service 3: AI Video Creation -->
+                <div class="service-card">
+                    <div class="service-icon-wrapper">
+                        <i class="fa-solid fa-clapperboard"></i>
+                    </div>
+                    <h3>AI Video Creation</h3>
+                    <p>High-converting AI-generated marketing configurations, product promotional designs, and viral short-form social media asset creation to drastically upgrade brand conversions.</p>
+                    <button class="service-btn">Read More <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // DOM Elements
+        const header = document.getElementById('header');
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        // Sticky Navbar Effect on Scroll
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Toggle Responsive Mobile Menu
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu upon selecting links
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                
+                // Track Active State Link Highlight
+                navLinks.forEach(el => el.classList.remove('active'));
+                link.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
