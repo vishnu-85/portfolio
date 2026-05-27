@@ -13,7 +13,7 @@
 
     <header>
         <div class="nav-container">
-            <a href="#home" class="logo">
+            <a href="" class="logo">
                 <img src="./img/vishnukant.jpg" alt="">
                 <span class="gradient-text">Vishnu Kant</span>
             </a>
@@ -37,8 +37,8 @@
                     <i class="fa-solid fa-bolt" style="margin-right: 6px;"></i> Available for Projects
                 </div>
                 <h1>Hi, I’m <span class="gradient-text"> Vishnu Kant</span></h1>
-                <h3>I Create Websites & Applications That Impress</h3>
-                <p>Expert Web Design, Web Development, and AI Video Creation Solutions for Modern Businesses.</p>
+                <h3>Building Modern Websites & Applications That Stand Out</h3>
+                <p>Professional Web Design, Web Development, and AI-Powered Creative Solutions for Modern Businesses.</p>
                 <div class="hero-ctas">
                     <a href="#contact" class="btn btn-primary">Get in Touch <i class="fa-solid fa-arrow-right"></i></a>
                     <a href="https://wa.me/918505975392" target="_blank" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp Me</a>
@@ -56,9 +56,10 @@
                 <div class="section-header" style="text-align: left; margin-bottom: 25px;">
                     <h2>About <span class="gradient-text">Me</span></h2>
                 </div>
-                <h3>Building Robust Enterprise & Consumer Tech Architecture</h3>
-                <p>Vishnu Kant is a professional Software Developer specializing in modern website development, web applications, enterprise dashboards, and AI-powered digital solutions.</p>
-                <p>He builds scalable, responsive, and user-friendly platforms using modern frontend and backend technologies. With experience in government and enterprise-level projects, he focuses on execution speed, clean UI structures, and distinct business-oriented software products.</p>
+                <h3>Building Robust Enterprise & Consumer Technology Solutions</h3>
+                <p>I am a professional Software Developer specializing in modern websites, web applications, enterprise dashboards, and AI-powered digital solutions.</p>
+                <p>I develop scalable, responsive, and user-centric platforms using modern frontend and backend technologies. With experience working on enterprise and government-level projects, I focus on clean architecture, high-performance applications, fast execution, and business-oriented software solutions.</p>
+                <p>My expertise includes building modern UI/UX experiences, secure web platforms, custom business applications, and scalable digital products tailored to real-world business needs.</p>
             </div>
             <div class="about-stats">
                 <div class="stat-card">
@@ -84,7 +85,7 @@
     <section id="services" class="reveal">
         <div class="section-header">
             <h2>Services <span class="gradient-text">Offered</span></h2>
-            <p>High-end technical solutions built tailored exactly to your scalable business objectives.</p>
+            <p>Building high-performance and scalable digital architectures for modern enterprises.</p>
         </div>
         <div class="services-grid">
             <div class="service-card">
@@ -111,7 +112,7 @@
     <section id="projects" class="reveal">
         <div class="section-header">
             <h2>Featured <span class="gradient-text">Projects</span></h2>
-            <p>A closer look into production platforms developed for enterprise, real estate, and government institutions.</p>
+            <p>Explore a collection of modern web applications, enterprise platforms, and business-focused digital solutions built with performance, scalability, and user experience in mind.</p>
         </div>
         <div class="projects-grid">
             <div class="project-card">
@@ -226,7 +227,7 @@
     <section id="skills" class="reveal">
         <div class="section-header">
             <h2>Core <span class="gradient-text">Competencies</span></h2>
-            <p>Modern engineering stacks and tooling applied daily to construct digital web structures.</p>
+            <p>Modern technologies and development tools used to build scalable, high-performance digital solutions.</p>
         </div>
         <div class="skills-container">
             <div class="skills-grid">
@@ -315,7 +316,7 @@
                 <div class="section-header" style="margin-bottom: 25px;">
                     <h2>Let's <span class="gradient-text">Collaborate</span></h2>
                 </div>
-                <p>Have an upcoming enterprise software application or AI video production requirement.</p>
+                <p>Have a project in mind for a modern website, enterprise application, or AI-powered digital solution? Let’s build something impactful together.</p>
                 
                 <div class="contact-details">
                     <div class="contact-row">
@@ -352,7 +353,7 @@
         <div class="footer-grid">
             <div class="footer-brand">
                 <h3>Vishnu Kant</h3>
-                <p>High performance scalable architecture design for forward-looking modern enterprises.</p>
+                <p>Delivering scalable, high-performance technology solutions for future-ready enterprises.</p>
             </div>
             <div class="footer-links">
                 <h4>Sitemap Links</h4>
@@ -367,13 +368,13 @@
                 <h4>Expert Services</h4>
                 <ul>
                     <li><a href="#services">Web Applications</a></li>
-                    <li><a href="#services">Enterprise Dashboards</a></li>
+                    <li><a href="#services">Website Design</a></li>
                     <li><a href="#services">AI Video Automation</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Vishnu Kant. All Rights Reserved.</p>
+            <p>&copy; <span id="year"></span> Vishnu Kant. All Rights Reserved.</p>
             <div class="social-icons">
                 <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
                 <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
@@ -383,6 +384,9 @@
     </footer>
 
     <script>
+
+        let year = document.getElementById('year')
+        if(year) year.innerText = new Date().getFullYear();
         // Responsive Hamburger Toggle Management
         const hamburger = document.querySelector('.hamburger');
         const navMenu = document.querySelector('.nav-menu');
