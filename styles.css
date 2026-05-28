@@ -187,7 +187,7 @@ a.logo span{
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--primary);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
   transition: var(--transition);
 }
 
@@ -197,7 +197,15 @@ a.logo span{
 }
 
 .nav-menu a:hover {
-  color: var(--primary);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  
+  /* 2. Clip the background image strictly to the text characters */
+  background-clip: text;
+  -webkit-background-clip: text; /* Required for Chrome, Safari, and Edge */
+  
+  /* 3. Make the actual text color transparent so the background shines through */
+  color: transparent;
+  -webkit-text-fill-color: transparent; /* Extra reliability for WebKit browsers */
 }
 
 .hamburger {
