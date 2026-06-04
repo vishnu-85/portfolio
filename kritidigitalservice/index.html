@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KRITI Digital Service - Kriti Digital Service Portal</title>
+    <!-- FontAwesome for High Quality Government Style Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts for Professional Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <!-- Tricolor Government Visual Ribbon Accent -->
+    <div class="gov-flag-strip"></div>
+    <div class="gov-top-bar">
+        <div class="gov-links">
+            <span><i class="fa-solid fa-flag"></i> Government of India Initiative</span>
+            <span>Kriti Digital Service Network Portal</span>
+        </div>
+        <div>Language: English | हिंदी</div>
+    </div>
+
+    <!-- Official Branding Header Workspace -->
+    <header class="identity-header">
+        <div class="logo-box">
+            <!-- Left Logo requested by User matching exact file name -->
+            <img src="./images/csc_center_logo.jpg" alt="KRITI Digital Service Logo" class="logo-left">
+            <div class="header-title-text">
+                <h1>KRITI Digital Service</h1>
+                <p>Authorized Common Services Center (CSC)</p>
+            </div>
+        </div>
+        <!-- Right Digital India/CSC emblem representation -->
+
+         <div class="logo-box">
+            <!-- Left Logo requested by User matching exact file name -->
+            <img src="./images/Digital-india-black.jpg" alt="digital_india" class="logo-left">
+        </div>
+    </header>
+
+    <!-- Navigation Bar Container Component -->
+    <div class="navbar-container">
+        <nav class="navbar">
+            <button class="hamburger" id="menuToggle" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item"><a href="index.html">Home</a></li>
+                <li class="nav-item"><a href="index.html#services">Services</a></li>
+                <li class="nav-item"><a href="index.html#about">About Us</a></li>
+                <li class="nav-item"><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Full-Width Hero Slider Presentation -->
+    <section id="home" class="hero-section">
+        <div class="slider-container">
+            <!-- Slide 1: Government to Citizen -->
+            <div class="slide active">
+                <div class="slide-image-overlay"></div>
+                <img src="./images/CSC-Banner1.jpg" alt="Government Services">
+                <!-- <div class="slide-content">
+                    <h2>Government to Citizen Services</h2>
+                    <p>Apply flawlessly for Aadhaar tracking, PAN Cards, certificates, and critical government schemas instantly.</p>
+                    <a href="#services" class="btn-cta">Explore Services</a>
+                </div> -->
+            </div>
+            <!-- Slide 2: Financial Services -->
+            <div class="slide">
+                <div class="slide-image-overlay"></div>
+                <img src="./images/CSC-Banner2.jpg" alt="Banking Services">
+                <!-- <div class="slide-content">
+                    <h2>Financial & Banking Access</h2>
+                    <p>Secure micro-banking operations, safe cash deposits, micro-withdrawals, and multi-tier pension management paths.</p>
+                    <a href="#services" class="btn-cta">View Details</a>
+                </div> -->
+            </div>
+            <!-- Slide 3: Utilities & Payments -->
+            <div class="slide">
+                <div class="slide-image-overlay"></div>
+                <img src="./images/CSC-Banner3.jpg" alt="Recharges and Bill Payments">
+                <!-- <div class="slide-content">
+                    <h2>Instant Utilities & Recharges</h2>
+                    <p>Fulfill electricity metrics, pipeline water distribution bills, mobile connections, and broadband configurations.</p>
+                    <a href="#services" class="btn-cta">Pay Bills Now</a>
+                </div> -->
+            </div>
+        </div>
+        <button class="slider-btn prev-btn" id="prevSlide"><i class="fa-solid fa-chevron-left"></i></button>
+        <button class="slider-btn next-btn" id="nextSlide"><i class="fa-solid fa-chevron-right"></i></button>
+    </section>
+
+    <!-- Modern Core Services Grid View Section -->
+    <section id="services" class="section-padding">
+        <div class="section-title">
+            <h2>Our Digital Services</h2>
+        </div>
+        <div class="services-grid">
+            <div class="service-card fade-in-up">
+                <div class="service-icon-box"><i class="fa-solid fa-landmark"></i></div>
+                <h3>Government to Citizen</h3>
+                <p>Direct assistance with Aadhaar card registrations, structured PAN allocations, voter tracking data lists, and official dynamic records.</p>
+            </div>
+            <div class="service-card fade-in-up">
+                <div class="service-icon-box"><i class="fa-solid fa-wallet"></i></div>
+                <h3>Financial & Banking Services</h3>
+                <p>AePS secure immediate cash processing windows, domestic balance transmissions, open account paths, and rural economic micro-insurance.</p>
+            </div>
+            <div class="service-card fade-in-up">
+                <div class="service-icon-box"><i class="fa-solid fa-bolt"></i></div>
+                <h3>Recharge & Bill Payments</h3>
+                <p>Instantaneous processing loops for lightning utilities, major cellular connections, standard DTH providers, and localized municipal demands.</p>
+            </div> 
+            <div class="service-card fade-in-up">
+                <div class="service-icon-box"><i class="fa-solid fa-graduation-cap"></i></div>
+                <h3>Education & Skill Development</h3>
+                <p>Access points for state educational arrays, digital literacy initiatives, scholarship applications, and verified online certifications.</p>
+            </div>
+        </div>
+        <div class="section-padding">
+            <marquee behavior="scroll" direction="left" scrollamount="4" class="services-marquee"> 
+            <img src="./images/service1.png" alt="Our Services" class="services-graphic fade-in-up">
+            </marquee>
+              <marquee behavior="scroll" direction="right" scrollamount="6" class="services-marquee"> 
+            <img src="./images/service2.png" alt="Our Services" class="services-graphic fade-in-up">
+            </marquee>
+        </div>
+    </section>
+
+    <!-- Comprehensive Professional About Us Segment -->
+    <section id="about" class="section-padding about-section">
+        <div class="about-wrapper">
+            <div class="about-content fade-in-up">
+                <div class="gov-badge">Vetted CSC Operator</div>
+                <h2 style="margin-bottom: 25px; font-size: 32px;">Welcome to Kriti Digital Service</h2>
+                <p>Welcome to Kriti Digital Service, your trusted partner for a wide range of essential services. We are committed to making your life simpler and more convenient by offering a comprehensive suite of services that cater to your everyday needs.</p>
+                <p>At Kriti Digital Service, we understand the importance of accessible and reliable services in today’s fast-paced world. That’s why we bring you a one-stop solution for your banking, recharge, and bill payment needs. Whether you need to top up your mobile phone, pay utility bills, or manage your finances, we have you covered.</p>
+                <p>Our mission extends beyond just convenience. We are proud to be a part of your community, and we take our role seriously. As a Government-approved service provider, we are dedicated to facilitating access to important government services. Whether you require assistance with Aadhar card registration, PAN card application, or any other government-related task, our knowledgeable staff is here to assist you every step of the way.</p>
+                <p>Traveling can be stressful, but with Kriti digital Service, planning your journeys becomes hassle-free. Our travel services enable you to book flights, trains, buses, and hotels with ease. We aim to simplify your travel experience, ensuring that you can focus on creating memorable moments during your trips.</p>
+                <!-- <p>What sets us apart is our unwavering commitment to customer satisfaction. We believe that excellent service is the cornerstone of our business, and we continually strive to exceed your expectations. Our dedicated team is always ready to assist you, whether you have a query, need assistance with a transaction, or require guidance on any of our services.</p> -->
+            </div>
+            <div class="about-graphic-box fade-in-up">
+                 <h3 style="margin-bottom: 15px;">Why Choose KRITI Digital Service?</h3>
+                <ul style="list-style: none; padding-top: 10px;">
+                    <li style="margin-bottom: 20px; display: flex; gap: 15px;"><i class="fa-solid fa-circle-check" style="color: var(--secondary-color); font-size: 20px;"></i> <div><strong>100% Secure Processing</strong><br>All your digital records and transaction gateways are completely protected.</div></li>
+                    <li style="margin-bottom: 20px; display: flex; gap: 15px;"><i class="fa-solid fa-circle-check" style="color: var(--secondary-color); font-size: 20px;"></i> <div><strong>Government Approved Center</strong><br>Fully certified operator bringing transparent and direct public services.</div></li>
+                    <li style="margin-bottom: 20px; display: flex; gap: 15px;"><i class="fa-solid fa-circle-check" style="color: var(--secondary-color); font-size: 20px;"></i> <div><strong>Local Support & Guidance</strong><br>Step-by-step assistance for local residents with multi-lingual transparency.</div></li>
+                </ul>
+                
+            </div>
+        </div> 
+    </section>
+
+    <!-- Professional 4-Unit Testimonial Slider Workspace -->
+    <section class="section-padding testimonials-section">
+        <div class="section-title">
+            <h2>Citizen Testimonials</h2>
+        </div>
+        <div class="testimonial-slider">
+            <div class="testimonial-track" id="testimonialTrack">
+                <!-- Slide 1 -->
+                <div class="testimonial-slide">
+                    <div class="testimonial-card">
+                        <i class="fa-solid fa-quote-left quote-icon"></i>
+                        <p class="testimonial-text">"Kriti Digital Service made my banking account registration seamless. Extremely polite staff and super fast processing!"</p>
+                        <p class="testimonial-author">- Ramesh Kumar, Baberu</p>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="testimonial-slide">
+                    <div class="testimonial-card">
+                        <i class="fa-solid fa-quote-left quote-icon"></i>
+                        <p class="testimonial-text">"Applying for certificate updates used to take weeks. At this Kriti Digital Service, it was executed efficiently within minutes."</p>
+                        <p class="testimonial-author">- Sunita Devi, Kushwaha Colony</p>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="testimonial-slide">
+                    <div class="testimonial-card">
+                        <i class="fa-solid fa-quote-left quote-icon"></i>
+                        <p class="testimonial-text">"I regularly visit Kriti Digital for utility electricity bill clearing and mobile network packages. Absolutely pristine transactions."</p>
+                        <p class="testimonial-author">- Anil Prajapati, Local Trader</p>
+                    </div>
+                </div>
+                <!-- Slide 4 -->
+                <div class="testimonial-slide">
+                    <div class="testimonial-card">
+                        <i class="fa-solid fa-quote-left quote-icon"></i>
+                        <p class="testimonial-text">"Outstanding planning assistance for long-distance train and travel documentation. Truly reliable support structure."</p>
+                        <p class="testimonial-author">- Rajesh Singh, Teacher</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-dots" id="testimonialDots"></div>
+        </div>
+    </section>
+
+    <!-- Fully Operational Contact & Structural Map Segment -->
+    <section id="contact" class="section-padding contact-section">
+        <div class="section-title">
+            <h2>Get In Touch</h2>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-info-card fade-in-up">
+                <h3 style="margin-bottom: 25px; font-size: 22px;">Business Contact Details</h3>
+                
+                <div class="contact-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>
+                        <h4>Address</h4>
+                        <p>Kushwaha coloni Baberu, Uttar Pradesh, India</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <div>
+                        <h4>Phone Number</h4>
+                        <p>+91 XXXXX XXXXX</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div>
+                        <h4>Email Address</h4>
+                        <p>amit@kritidigitalservice.in</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="fa-solid fa-clock"></i>
+                    <div>
+                        <h4>Business Hours</h4>
+                        <p>Mon–Sat, 9:00 AM – 6:00 PM (Sunday Closed)</p>
+                    </div>
+                </div>
+
+                <!-- WhatsApp Quick Action Trigger -->
+                <a href="https://wa.me/910000000000" target="_blank" class="btn-whatsapp">
+                    <i class="fa-brands fa-whatsapp"></i> Chat via WhatsApp
+                </a>
+            </div>
+            
+            <!-- Standard Map Representation Frame Box -->
+            <div class="map-placeholder fade-in-up">
+                <!-- Fallback to a pristine geographic coordinates framework matching specified Baberu zone -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14341.229188094676!2d80.543594!3d25.544837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399c7504db6c4e73%3A0x6b4ef8d77c4be4bd!2sBaberu%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Structural Standard Footer Element -->
+    <footer>
+        <div class="footer-top">
+            <div class="footer-brand">
+                <h3>KRITI Digital Service</h3>
+                <p>Your premier verified localized gateway to secure transactional infrastructure and streamlined institutional updates.</p>
+                <div class="footer-socials">
+                    <a href="#" aria-label="Facebook Link"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter Link"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn Link"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services Workspace</a></li>
+                    <li><a href="#about">About Us Information</a></li>
+                    <li><a href="#contact">Contact Coordinates</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#services">Government to Citizen</a></li>
+                    <li><a href="#services">Financial Micro Banking</a></li>
+                    <li><a href="#services">Recharge Infrastructure</a></li>
+                    <li><a href="#services">Travel Assistance Logistics</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#contact">Help Desk</a></li>
+                    <li><a href="#contact">Locate Center</a></li>
+                    <li><a href="#about">Operator Profile</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Kriti digital Service. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE FUNCTIONAL JAVASCRIPT LOGIC -->
+    <script>
+        // --- MOBILE NAVBAR HAMBURGER TOGGLE ---
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('open');
+        });
+
+        // Close menu automatically on layout navigation selection
+        document.querySelectorAll('.nav-item a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('open');
+                document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
+                link.parentElement.classList.add('active');
+            });
+        });
+
+        // --- HERO AUTOMATED IMAGE CROSSFADE SLIDER ---
+        const slides = document.querySelectorAll('.slide');
+        const prevSlideBtn = document.getElementById('prevSlide');
+        const nextSlideBtn = document.getElementById('nextSlide');
+        let currentSlide = 0;
+        let slideInterval = setInterval(nextSlide, 6000);
+
+        function showSlide(index) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (index + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        nextSlideBtn.addEventListener('click', () => {
+            nextSlide();
+            resetSliderTimer();
+        });
+
+        prevSlideBtn.addEventListener('click', () => {
+            prevSlide();
+            resetSliderTimer();
+        });
+
+        function resetSliderTimer() {
+            clearInterval(slideInterval);
+            slideInterval = setInterval(nextSlide, 6000);
+        }
+
+        // --- TESTIMONIAL CAROUSEL ENGINE ---
+        const track = document.getElementById('testimonialTrack');
+        const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+        const dotsContainer = document.getElementById('testimonialDots');
+        let currentTestimonial = 0;
+
+        // Dynamic Dot Indicators Generation Loop
+        testimonialSlides.forEach((_, idx) => {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            if (idx === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => jumpToTestimonial(idx));
+            dotsContainer.appendChild(dot);
+        });
+
+        const dots = document.querySelectorAll('.dot');
+
+        function jumpToTestimonial(index) {
+            currentTestimonial = index;
+            track.style.transform = `translateX(-${index * 100}%)`;
+            dots.forEach(d => d.classList.remove('active'));
+            dots[index].classList.add('active');
+        }
+
+        // Auto Scroll Testimonials
+        setInterval(() => {
+            let nextIndex = (currentTestimonial + 1) % testimonialSlides.length;
+            jumpToTestimonial(nextIndex);
+        }, 5000);
+
+        // --- SMOOTH SCROLL SCROLL-SPY INTERSECTION OBSERVER ---
+        const elementsToAnimate = document.querySelectorAll('.fade-in-up');
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const animationObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('appear');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        elementsToAnimate.forEach(el => animationObserver.observe(el));
+    </script>
+</body>
+</html>

@@ -407,6 +407,15 @@ a.logo span{
 .service-img{
 
 }
+.trust-img{
+    padding: 1rem 1.5rem 0;
+    background: linear-gradient(135deg, var(--secondary), var(--secondary));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    font-size: 34px;
+}
 .service-icon {
   width: 60px;
   height: 60px;
