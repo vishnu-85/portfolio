@@ -307,7 +307,8 @@ a.logo span{
 }
 
 /* --- ABOUT SECTION --- */
-#about {
+
+#trust-indicators, #services, #skills {
   background: var(--bg-alt);
 }
 
@@ -362,7 +363,51 @@ a.logo span{
   font-size: 0.95rem;
   font-weight: 500;
 }
+/* why-hire-text-grid */
+.why-hire-text-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
 
+.feature-block {
+  background: var(--bg-main);
+  padding: 0;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.feature-block h3{
+  color: var(--primary);
+}
+
+.feature-block::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: var(--transition);
+}
+
+.feature-block:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-md);
+}
+
+.feature-block:hover::before {
+  transform: scaleX(1);
+}
 /* --- SERVICES SECTION --- */
 .services-grid {
   display: grid;
@@ -445,9 +490,6 @@ a.logo span{
 }
 
 /* --- PROJECTS SECTION --- */
-#projects {
-  background: var(--bg-alt);
-}
 
 .projects-grid {
   display: grid;
