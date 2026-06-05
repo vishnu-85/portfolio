@@ -586,8 +586,6 @@
      border-radius: 12px;
      overflow: hidden;
      box-shadow: var(--shadow-soft);
-     height: 400px;
-     width: 600px;
      position: relative;
  }
 
