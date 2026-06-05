@@ -15,14 +15,14 @@
 <body>
 
     <!-- Tricolor Government Visual Ribbon Accent -->
-    <div class="gov-flag-strip"></div>
+    <!-- <div class="gov-flag-strip"></div>
     <div class="gov-top-bar">
         <div class="gov-links">
             <span><i class="fa-solid fa-flag"></i> Government of India Initiative</span>
             <span>Kriti Digital Service Network Portal</span>
         </div>
         <div>Language: English | हिंदी</div>
-    </div>
+    </div> -->
 
     <!-- Official Branding Header Workspace -->
     <header class="identity-header">
@@ -33,22 +33,23 @@
                 <h1>KRITI Digital Service</h1>
                 <p>Authorized Common Services Center (CSC)</p>
             </div>
+              <button class="hamburger" id="menuToggle" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
         </div>
         <!-- Right Digital India/CSC emblem representation -->
 
-         <div class="logo-box">
+         <div class="logo-box right-logo">
             <!-- Left Logo requested by User matching exact file name -->
             <img src="./images/Digital-india-black.jpg" alt="digital_india" class="logo-left">
         </div>
+       
     </header>
 
     <!-- Navigation Bar Container Component -->
     <div class="navbar-container">
-        <nav class="navbar">
-            <button class="hamburger" id="menuToggle" aria-label="Toggle Menu">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-            <ul class="nav-menu" id="navMenu">
+        <nav class="navbar" id="navMenu">
+            <ul class="nav-menu" >
                 <li class="nav-item"><a href="index.html">Home</a></li>
                 <li class="nav-item"><a href="index.html#services">Services</a></li>
                 <li class="nav-item"><a href="index.html#about">About Us</a></li>
@@ -63,7 +64,7 @@
         <div class="slider-container">
             <!-- Slide 1: Government to Citizen -->
             <div class="slide active">
-                <div class="slide-image-overlay"></div>
+                <!-- <div class="slide-image-overlay"></div> -->
                 <img src="./images/CSC-Banner1.jpg" alt="Government Services">
                 <!-- <div class="slide-content">
                     <h2>Government to Citizen Services</h2>
@@ -73,7 +74,7 @@
             </div>
             <!-- Slide 2: Financial Services -->
             <div class="slide">
-                <div class="slide-image-overlay"></div>
+                <!-- <div class="slide-image-overlay"></div> -->
                 <img src="./images/CSC-Banner2.jpg" alt="Banking Services">
                 <!-- <div class="slide-content">
                     <h2>Financial & Banking Access</h2>
@@ -83,7 +84,7 @@
             </div>
             <!-- Slide 3: Utilities & Payments -->
             <div class="slide">
-                <div class="slide-image-overlay"></div>
+                <!-- <div class="slide-image-overlay"></div> -->
                 <img src="./images/CSC-Banner3.jpg" alt="Recharges and Bill Payments">
                 <!-- <div class="slide-content">
                     <h2>Instant Utilities & Recharges</h2>
@@ -371,7 +372,7 @@
                 </div>
 
                 <!-- WhatsApp Quick Action Trigger -->
-                <a href="https://wa.me/910000000000" target="_blank" class="btn-whatsapp">
+                <a href="https://wa.me/919918934499?text=Hi Amit" target="_blank" class="btn-whatsapp">
                     <i class="fa-brands fa-whatsapp"></i> Chat via WhatsApp
                 </a>
             </div>
@@ -379,8 +380,7 @@
             <!-- Standard Map Representation Frame Box -->
             <div class="map-placeholder fade-in-up">
                 <!-- Fallback to a pristine geographic coordinates framework matching specified Baberu zone -->
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14341.229188094676!2d80.543594!3d25.544837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399c7504db6c4e73%3A0x6b4ef8d77c4be4bd!2sBaberu%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
+                <div class="mapouter"><div class="gmap_canvas"><iframe class="gmap_iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=600&amp;height=500&amp;hl=en&amp;q=25.544768590880942, 80.69819407771348&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a href="https://embed-googlemap.com">embed google map</a></div><style>.mapouter{position:relative;text-align:right;width:600px;height:500px;}.gmap_canvas {overflow:hidden;background:none!important;width:600px;height:500px;}.gmap_iframe {width:600px!important;height:500px!important;}</style></div>
         </div>
     </section>
 

@@ -74,6 +74,9 @@
      justify-content: space-between;
      align-items: center;
      background: var(--white);
+     position: sticky;
+     top: 0;
+     z-index: 1001;
  }
 
  .logo-box {
@@ -109,7 +112,7 @@
  /* --- STICKY NAVIGATION BAR --- */
  .navbar-container {
      position: sticky;
-     top: 0;
+     top: 110px;
      z-index: 1000;
      background: var(--primary-color);
      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -166,16 +169,15 @@
      cursor: pointer;
      background: none;
      border: none;
-     color: var(--white);
-     font-size: 24px;
+     color: var(--primary-color);
+     font-size: 32px;
      padding: 15px 0;
  }
 
  /* --- HERO SLIDER SECTION --- */
  .hero-section {
      position: relative;
-     height: 520px;
-     background: #eef2f7;
+     height: 65vh;
      overflow: hidden;
  }
 
@@ -204,12 +206,12 @@
  }
 
  .slide-image-overlay {
-     display: none;
+     /* display: none;
      position: absolute;
      top: 0;
      left: 0;
      width: 100%;
-     height: 100%;
+     height: 100%; */
      /* background: linear-gradient(90deg, rgba(255, 255, 255, 0.95) 40%, rgba(255, 255, 255, 0.2) 100%); */
      /* z-index: 1; */
  }
@@ -220,7 +222,7 @@
      top: 0;
      width: 100%;
      height: 65vh;
-     object-fit: cover;
+     object-fit: contain;
      z-index: 0;
  }
 
@@ -312,7 +314,7 @@
  }
 
  .section-title h2 {
-     font-size: 32px;
+     font-size: 30px;
      margin-bottom: 10px;
      text-transform: uppercase;
      letter-spacing: -0.5px;
@@ -584,8 +586,8 @@
      border-radius: 12px;
      overflow: hidden;
      box-shadow: var(--shadow-soft);
-     min-height: 350px;
-     background: #e0e0e0;
+     height: 400px;
+     width: 600px;
      position: relative;
  }
 
@@ -778,11 +780,15 @@
     .news-grid{
          grid-template-columns: repeat(1, minmax(250px, 1fr));
     }
-
+    .hero-section {
+        height: 15vh;   
+    }
+    .slide img {
+         height: 15vh;
+     }
      .gov-top-bar {
          display: none;
      }
-
      .identity-header {
          flex-direction: column;
          gap: 15px;
@@ -795,20 +801,49 @@
 
      /* Hide secondary logo on tiny mobile devices */
 
+     .gov-top-bar , .gov-flag-strip, .right-logo{
+        display: none !important;
+     }
      .hamburger {
          display: block;
      }
 
-     .nav-menu {
+     .header-title-text p{
+        display: none;
+     }
+     /* .navbar-container{
+        top: 110px;
+     } */
+
+    .identity-header{
+        position: sticky;
+        top: 0;
+        width: 100%;
+        z-index: 1001;   
+    }
+     .navbar {
          display: none;
          flex-direction: column;
          width: 100%;
          background: var(--primary-color);
          border-top: 1px solid rgba(255, 255, 255, 0.1);
      }
-
-     .nav-menu.open {
+     .navbar.open {
          display: flex;
+         position: absolute;
+         top: 0;
+         left: 0;
+         z-index: 1001;
+         transition: 0ms.3s ease-in-out;
+     }
+
+     
+     .nav-menu{
+        display: flex; 
+        flex-direction: column;
+         width: 100%;
+         background: var(--primary-color);
+         border-top: 1px solid rgba(255, 255, 255, 0.1);
      }
 
      .nav-item a {
@@ -818,9 +853,12 @@
 
      .slide img {
          width: 100%;
-         opacity: 0.25;
+         opacity: 0.9;
      }
-
+.slider-btn{
+    width: 28px;
+    height: 28px;
+}
      .slide-image-overlay {
          /* background: linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.95) 100%); */
      }
@@ -835,69 +873,3 @@
          grid-template-columns: 1fr;
      }
  }
-
- /* GOVT RIBBON & HEADER */
-        .gov-flag-strip { height: 4px; width: 100%; background: linear-gradient(to right, #FF9933 33%, #FFFFFF 33%, #FFFFFF 66%, #138808 66%); }
-        .gov-top-bar { background: #f1f1f1; font-size: 12px; padding: 5px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e0e0e0; font-weight: 500; }
-        .identity-header { padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; background: var(--white); }
-        .logo-box { display: flex; align-items: center; gap: 15px; }
-        .logo-left { height: 80px; width: auto; object-fit: contain; }
-        .logo-right { height: 65px; width: auto; }
-        .header-title-text h1 { font-size: 24px; text-transform: uppercase; line-height: 1;}
-        .header-title-text p { font-size: 13px; color: var(--secondary-color); font-weight: 600; }
-
-        /* NAVBAR */
-        .navbar-container { position: sticky; top: 0; z-index: 1000; background: var(--primary-color); }
-        .navbar { display: flex; padding: 0 5%; max-width: 1400px; margin: 0 auto; }
-        .nav-menu { display: flex; list-style: none; }
-        .nav-item a { display: block; padding: 18px 25px; color: var(--white); font-weight: 500; font-size: 15px; transition: var(--transition-smooth); }
-        .nav-item a:hover { background: rgba(255,255,255,0.05); color: var(--secondary-color); }
-
-        /* INNER SERVICE BANNER */
-        .service-banner {
-            position: relative;
-            height: 300px;
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            padding: 0 5%;
-        }
-        .banner-overlay {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(90deg, rgba(24, 47, 110, 0.95) 30%, rgba(24, 47, 110, 0.4) 100%);
-            z-index: 1;
-        }
-        .banner-content { position: relative; z-index: 2; color: var(--white); max-width: 800px; }
-        .banner-content h2 { color: var(--white); font-size: 38px; margin-bottom: 10px; }
-        .breadcrumb { font-size: 14px; color: rgba(255,255,255,0.7); }
-        .breadcrumb a { color: var(--secondary-color); font-weight: 600; }
-
-        /* MAIN CONTENT STRUCTURE */
-        .main-container { padding: 60px 5%; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr; gap: 50px; }
-        .service-details-box { background: var(--white); }
-        .about-service-text { font-size: 16px; color: #333; line-height: 1.8; margin-bottom: 40px; text-align: justify; }
-        
-        /* BULLET POINTS SYSTEM */
-        .points-heading { font-size: 24px; margin-bottom: 20px; border-left: 4px solid var(--secondary-color); padding-left: 12px; }
-        .bullets-list { list-style: none; }
-        .bullets-list li { position: relative; padding-left: 35px; margin-bottom: 18px; font-size: 15px; color: #222; }
-        .bullets-list li i { position: absolute; left: 0; top: 4px; color: var(--secondary-color); font-size: 18px; }
-
-        /* SIDEBAR ACTION CARD */
-        .sidebar-card { background: var(--bg-light); padding: 30px; border-radius: 12px; box-shadow: var(--shadow-soft); height: fit-content; border-top: 4px solid var(--primary-color); }
-        .sidebar-card h3 { font-size: 20px; margin-bottom: 15px; }
-        .sidebar-card p { font-size: 14px; color: #555; margin-bottom: 20px; }
-        .btn-action { display: block; text-align: center; background: var(--secondary-color); color: var(--white); padding: 12px; border-radius: 6px; font-weight: 600; transition: var(--transition-smooth); }
-        .btn-action:hover { background: #cc6310; transform: translateY(-2px); }
-
-        /* FOOTER */
-        footer { background: #111e42; color: #d1d5db; padding: 20px 5%; text-align: center; font-size: 14px; margin-top: 60px; }
-
-        @media (max-width: 768px) {
-            .main-container { grid-template-columns: 1fr; }
-            .banner-content h2 { font-size: 28px; }
-            .identity-header { flex-direction: column; text-align: center; }
-            .logo-right { display: none; }
-        }
