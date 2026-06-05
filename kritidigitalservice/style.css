@@ -5,6 +5,7 @@
      --text-color: #121212;
      --bg-light: #F8F9FC;
      --white: #FFFFFF;
+     --shadow-dark: 0 4px 20px rgba(0, 0, 0, 0.15);
      --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.05);
      --shadow-hover: 0 10px 30px rgba(24, 47, 110, 0.12);
      --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -336,14 +337,13 @@
  .service-card {
      background: var(--white);
      border-radius: 12px;
-     padding: 35px 25px;
-     text-align: center;
-     box-shadow: var(--shadow-soft);
+     text-align: start;
+     box-shadow: var(--shadow-dark);
      border-top: 4px solid transparent;
      transition: var(--transition-smooth);
      display: flex;
      flex-direction: column;
-     align-items: center;
+     align-items: flex-start;
  }
 
  .service-card:hover {
@@ -353,8 +353,6 @@
  }
 
  .service-icon-box {
-     width: 75px;
-     height: 75px;
      background: #f4f6fa;
      border-radius: 50%;
      display: flex;
@@ -364,30 +362,51 @@
      transition: var(--transition-smooth);
  }
 
- .service-icon-box i {
-     font-size: 32px;
-     color: var(--primary-color);
+ .service-icon-box img {
+    width: 100%;
  }
-
- .service-card:hover .service-icon-box {
-     background: var(--primary-color);
- }
-
- .service-card:hover .service-icon-box i {
-     color: var(--white);
- }
+  
 
  .service-card h3 {
      font-size: 19px;
-     margin-bottom: 12px;
      font-weight: 600;
+    padding: 10px 20px;
  }
 
  .service-card p {
      font-size: 14px;
      color: #555;
- }
+     padding: 10px 20px;
+    }
 
+.news-grid{
+     display: grid;
+     grid-template-columns: repeat(4, minmax(250px, 1fr));
+     gap: 30px;
+}
+.news-grid .news-card {
+     background: var(--white);
+     border-radius: 12px;
+     text-align: start;
+     box-shadow: var(--shadow-dark);
+     border-top: 4px solid transparent;
+     transition: var(--transition-smooth);
+     display: flex;
+     flex-direction: column;
+     align-items: flex-start;
+ }
+ .news-grid .news-card img{
+    width: 100%;
+ }
+ .news-grid .news-card h3{
+    font-size: 19px;
+    padding: 10px 20px;
+ }
+.news-grid .news-card p{
+    font-size: 14px;
+    color: #555;
+    padding: 10px 20px;
+}
  /* --- ABOUT US SECTION (LIGHT/WHITE ACCENT) --- */
  .about-section {
      background-color: var(--bg-light);
@@ -682,6 +701,62 @@
      transform: translateY(0);
  }
 
+ /* Chips d */
+
+ .chips-grid {
+            display: grid;
+            grid-template-columns: repeat(7, minmax(140px, 1fr));
+            gap: 12px;
+            justify-content: center;
+        }
+
+        /* Responsive grid adjustments */
+        @media (max-width: 1100px) { .chips-grid { grid-template-columns: repeat(6, 1fr); } }
+        @media (max-width: 850px) { .chips-grid { grid-template-columns: repeat(4, 1fr); } }
+        @media (max-width: 600px) { .chips-grid { grid-template-columns: repeat(3, 1fr); } }
+        @media (max-width: 450px) { .chips-grid { grid-template-columns: repeat(2, 1fr); } }
+
+        /* Base Chip Design */
+        .chip {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 14px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #ffffff;
+            text-align: center;
+            text-decoration: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .chip:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            filter: brightness(1.1);
+        }
+
+        /* Color Variations Matching the Image */
+        .bg-red { background-color: #d32f2f; }
+        .bg-orange { background-color: #ed6c02; }
+        .bg-blue { background-color: #0288d1; }
+        .bg-green { background-color: #2e7d32; }
+        .bg-yellow { background-color: #fbc02d; color: #212121; } /* Dark text for contrast */
+        .bg-dark-brown { background-color: #4e342e; }
+        .bg-pink { background-color: #e91e63; }
+        .bg-purple { background-color: #7b1fa2; }
+        .bg-black { background-color: #212121; }
+        .bg-white { background-color: #ffffff; color: #1a237e; border: 2px solid #1a237e; } /* White with blue text */
+        .bg-navy { background-color: #1a237e; }
+        .bg-teal { background-color: #00796b; }
+
  /* --- RESPONSIVE MEDIA QUERIES --- */
  @media (max-width: 1024px) {
 
@@ -700,6 +775,10 @@
  }
 
  @media (max-width: 768px) {
+    .news-grid{
+         grid-template-columns: repeat(1, minmax(250px, 1fr));
+    }
+
      .gov-top-bar {
          display: none;
      }
